@@ -1,4 +1,4 @@
-# BLEACH: Heat the Soul 7 — PC Native Recompilation (Beta v1.0)
+# BLEACH: Heat the Soul 7 — PC Native Recompilation (v1.0)
 
 [![Latest Release](https://img.shields.io/github/v/release/krprojecthts/Bleach-HTS7-Releases?include_prereleases&label=Download&color=orange&style=for-the-badge)](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20(64--bit)-blue?style=for-the-badge)](#system-requirements)
