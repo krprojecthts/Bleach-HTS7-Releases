@@ -6,7 +6,7 @@
 
 A native PC static recompilation of ***BLEACH: Heat the Soul 7*** (`NPJH50275`), rebuilt from the ground up with 60 FPS combat, GGPO-based rollback netcode, 4-player online Battle Royale, upgraded stage lighting, and full modding support.
 
-> **[Download Latest Release (Beta v1.0 — Windows 64-bit)](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest)**
+> **[Download Latest Release (Beta v1.01 — Windows 64-bit)](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest)**
 
 ---
 
