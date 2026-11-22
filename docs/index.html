@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BLEACH HTS7 PC</title>
+<meta name="description" content="BLEACH: Heat the Soul 7 — a native Windows port of the PSP game, made by static recompilation. build v1.02 | @KRISCHENN & @LAINTHEWIRED">
+<meta property="og:title" content="BLEACH: Heat the Soul 7 — PC Recompilation v1.02">
+<meta property="og:description" content="60 FPS, rollback netcode, rebuilt online lobbies, Replay Theater with MP4 export, training suite. build v1.02 | @KRISCHENN & @LAINTHEWIRED">
+<meta property="og:image" content="media/hero_banner.png">
+<link rel="icon" href="media/ui/butterfly_0.png">
+<style>
+:root {
+  --navy: #141c34; --navy-deep: #080c18; --navy-top: #212942;
+  --gold: #d8b866; --gold-light: #f2cc6a; --bronze: #8c5e22;
+  --ivory: #f4eedc; --crimson: #c8163c; --ember: #8e1020; --muted: #aab0c4;
+  --page: 1180px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0; overflow-x: hidden; color: var(--ivory); background: var(--navy-deep);
+  font: 16px/1.6 "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+}
+/* The save screens' Hell Butterflies (memst_bg), added over the dark as the game does. */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -2;
+  background: url("media/ui/butterflies_tile.png") 0 0 / 512px repeat, linear-gradient(#060810, #0e1224);
+  background-blend-mode: screen; opacity: .55;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 0%, rgba(20,28,52,0) 0%, rgba(8,12,24,.85) 75%);
+}
+#particles { position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+a { color: var(--gold-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; display: block; }
+.wrap { max-width: var(--page); margin: 0 auto; padding: 0 16px; }
+
+/* The menus' gold rule: gold, a light line on top, bronze under. */
+.rule { height: 4px; background: linear-gradient(var(--gold-light) 0 1px, var(--gold) 1px 3px, var(--bronze) 3px); }
+
+header.top {
+  position: sticky; top: 0; z-index: 5; background: rgba(20,28,52,.92); backdrop-filter: blur(6px);
+  border-bottom: 3px solid var(--gold); box-shadow: 0 1px 0 var(--bronze);
+}
+header.top .wrap { display: flex; align-items: center; gap: 18px; min-height: 52px; flex-wrap: wrap; }
+header.top .brand { font: 700 17px/1 Georgia, "Times New Roman", serif; letter-spacing: 2px; color: var(--ivory); white-space: nowrap; }
+header.top nav { display: flex; gap: 16px; flex-wrap: wrap; margin-left: auto; font-size: 14px; }
+header.top nav a { color: var(--ivory); opacity: .85; }
+header.top nav a:hover { color: var(--gold-light); opacity: 1; text-decoration: none; }
+
+.hero { margin: 22px auto 0; position: relative; }
+.hero img { width: 100%; border: 1px solid var(--bronze); box-shadow: 0 12px 40px rgba(0,0,0,.6); }
+
+/* Buttons and the update pill's look: navy capsules with a gold hairline. */
+.pill, .btn {
+  display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; border: 2px solid var(--gold);
+  background: linear-gradient(var(--navy-top), var(--navy-deep)); color: var(--ivory); padding: 10px 22px;
+  font-weight: 700; letter-spacing: .5px; text-decoration: none;
+}
+.btn:hover { border-color: var(--gold-light); box-shadow: 0 0 18px rgba(242,204,106,.35); text-decoration: none; }
+.btn.primary { background: linear-gradient(#8e1020, #4a0812); border-color: var(--gold-light); font-size: 18px; padding: 14px 30px; }
+.pill .v { color: var(--gold-light); }
+
+.download {
+  margin: 26px auto 0; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center;
+  padding: 22px 26px; position: relative; overflow: hidden;
+}
+.download .info h2 { margin: 0 0 4px; font: 700 26px Georgia, serif; letter-spacing: 1px; }
+.download .info { min-width: 0; }
+.download .info p { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
+.download .info .meta { color: var(--gold); font-weight: 600; }
+.download .actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+@media (max-width: 720px) { .download { grid-template-columns: 1fr; } .download .actions { align-items: stretch; } }
+
+/* A framed panel: navy plate, gold frame, lace in the corners (the main menu's flowers). */
+.panel {
+  background: linear-gradient(rgba(33,41,66,.94), rgba(8,12,24,.94)); border: 2px solid var(--gold);
+  outline: 1px solid var(--bronze); outline-offset: 3px; border-radius: 4px; position: relative; overflow: hidden; min-width: 0;
+}
+.panel::before, .panel::after {
+  content: ""; position: absolute; width: 170px; height: 170px; pointer-events: none; opacity: .22;
+  background: url("media/ui/lace.png") center / contain no-repeat;
+}
+.panel::before { top: -40px; left: -50px; }
+.panel::after { bottom: -50px; right: -40px; transform: scaleX(-1) rotate(180deg); }
+.panel > * { position: relative; }
+
+section { margin: 46px auto 0; }
+section > .banner { width: 100%; border: 1px solid var(--bronze); }
+h3 { font: 700 20px Georgia, serif; margin: 0 0 6px; color: var(--ivory); }
+.lead { color: var(--muted); margin: 14px 0 0; }
+
+.features { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; margin-top: 18px; }
+.feature { padding: 18px 20px 16px; }
+.feature .icon {
+  width: 34px; height: 34px; transform: rotate(45deg); margin: 4px 0 14px 6px; border: 3px solid var(--gold-light);
+  background: radial-gradient(circle, #f4eedc 0 12%, var(--crimson) 13% 55%, var(--ember) 56%); box-shadow: 0 0 0 2px #100a08;
+}
+.feature p { margin: 0; color: #d9d6cc; font-size: 15px; }
+
+/* The before/after slider: the same frame, PSP under, PC over, clipped at the handle. */
+.compare { position: relative; margin-top: 18px; user-select: none; touch-action: pan-y; aspect-ratio: 1600 / 907; overflow: hidden; border: 2px solid var(--gold); }
+.compare img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; image-rendering: auto; }
+.compare img.psp { image-rendering: pixelated; }
+.compare .over { clip-path: inset(0 0 0 var(--x, 50%)); }
+.compare .handle { position: absolute; top: 0; bottom: 0; left: var(--x, 50%); width: 3px; margin-left: -1px; background: var(--gold-light); box-shadow: 0 0 10px rgba(0,0,0,.8); }
+.compare .handle::after {
+  content: "◆"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: var(--crimson);
+  font-size: 22px; width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%;
+  background: var(--navy); border: 2px solid var(--gold-light);
+}
+.compare .tag { position: absolute; top: 10px; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--gold); background: rgba(8,12,24,.85); font-size: 13px; font-weight: 700; }
+.compare .tag.l { left: 10px; } .compare .tag.r { right: 10px; color: var(--gold-light); }
+.compare input { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: ew-resize; margin: 0; }
+.gallery { display: grid; gap: 14px; margin-top: 16px; }
+.gallery img { border: 1px solid var(--bronze); width: 100%; }
+
+.install { padding: 22px 26px; margin-top: 18px; }
+.install ol { margin: 0; padding-left: 22px; }
+.install li { margin: 0 0 10px; }
+code { background: rgba(8,12,24,.8); border: 1px solid rgba(216,184,102,.35); border-radius: 4px; padding: 1px 6px; font-size: 14px; color: var(--gold-light); }
+.note { margin-top: 14px; padding: 12px 16px; border-left: 4px solid var(--crimson); background: rgba(200,22,60,.08); color: #e8dccb; }
+
+.channels { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 18px; }
+.channel { padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: var(--ivory); transition: transform .15s; }
+.channel:hover { transform: translateY(-3px); text-decoration: none; box-shadow: 0 0 22px rgba(242,204,106,.25); }
+.channel .name { font: 700 22px Georgia, serif; }
+.channel .what { color: var(--muted); font-size: 15px; }
+.channel .go { margin-top: auto; color: var(--gold-light); font-weight: 700; }
+.channel .logo { width: 40px; height: 40px; }
+
+.creators { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-top: 18px; }
+.creators img { border: 1px solid var(--bronze); width: 100%; }
+
+footer { margin-top: 60px; background: var(--navy); }
+footer .wrap { padding: 16px; display: flex; gap: 14px; flex-wrap: wrap; align-items: center; justify-content: space-between; font-size: 14px; }
+footer .credit { color: #f8f8f8; font-weight: 600; text-shadow: 0 0 2px #101014, 1px 1px 0 #101014; }
+footer .legal { color: var(--muted); font-size: 12.5px; max-width: 760px; }
+@media (prefers-reduced-motion: reduce) { #particles { display: none; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<canvas id="particles" aria-hidden="true"></canvas>
+
+<header class="top">
+  <div class="wrap">
+    <span class="brand">BLEACH HTS7 · PC</span>
+    <span class="pill">build <span class="v">v1.02</span></span>
+    <nav>
+      <a href="#download">Download</a><a href="#features">Features</a><a href="#compare">PSP vs PC</a>
+      <a href="#install">Install</a><a href="#community">Community</a><a href="#creators">Creators</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero"><img src="media/hero_banner.png" alt="BLEACH: Heat the Soul 7 — PC Recompilation v1.02" width="1600" height="600"></div>
+
+  <div id="download" class="panel download">
+    <div class="info">
+      <h2 id="rel-title">Latest release</h2>
+      <p id="rel-meta" class="meta">Checking GitHub Releases…</p>
+      <p>Native Windows 10/11 x64 · Vulkan · no game data included: you need your own UCJS-10110 disc image and decrypted EBOOT.BIN.</p>
+    </div>
+    <div class="actions">
+      <a id="rel-download" class="btn primary" href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest">⬇ Download</a>
+      <a class="btn" href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases">All releases</a>
+    </div>
+  </div>
+
+  <section id="features">
+    <img class="banner" src="media/section_features.png" alt="Features" width="1600" height="150">
+    <div class="features">
+      <div class="panel feature"><div class="icon"></div><h3>60 FPS presentation</h3><p>60 pictures a second through Vulkan, with an in-between picture drawn between every two game frames. The game itself runs at 30, as on the PSP, so timing and combos are unchanged.</p></div>
+      <div class="panel feature"><div class="icon"></div><h3>Lighting &amp; shaders</h3><p>Up to 6× internal resolution, texture upscaling, MSAA and anisotropic filtering. A post-processing pass adds bloom, contrast, warmth, sharpening and ambient occlusion, and stages get lighting set per stage.</p></div>
+      <div class="panel feature"><div class="icon"></div><h3>Rollback netcode &amp; lobbies</h3><p>Quick Match, Ranked (FT2) with Soul Points and Soul Rate, public and private rooms, Live Matches spectating, Fighter Cards and Direct Connect.</p></div>
+      <div class="panel feature"><div class="icon"></div><h3>Replay Theater</h3><p>Save any battle from its results screen with SELECT, play it back from the REPLAYS card, and export it straight to an MP4 video.</p></div>
+      <div class="panel feature"><div class="icon"></div><h3>Training suite</h3><p>Frame data, input display, dummy recording and playback, Ghost Sparring, playback speed down to 10%, and instant position reset.</p></div>
+      <div class="panel feature"><div class="icon"></div><h3>Battle Royale, restored</h3><p>Four-player Battle Royale on every versus stage, with each fighter's alternate colours.</p></div>
+      <div class="panel feature"><div class="icon"></div><h3>Automatic updates</h3><p>Checks GitHub Releases at start and sends nothing about you. A newer release shows a quiet pill on the main menu. The download is verified (size and SHA-256) before it installs, and saves and settings are never touched.</p></div>
+      <div class="panel feature"><div class="icon"></div><h3>PC controls &amp; mods</h3><p>XInput and keyboard with remapping and button icons, a BGM Jukebox with custom soundtrack packs, and built-in texture dumping with HD replacement.</p></div>
+    </div>
+  </section>
+
+  <section id="compare">
+    <img class="banner" src="media/section_comparison.png" alt="PSP vs PC" width="1600" height="150">
+    <p class="lead">The same frame of the same scripted battle, rendered by the port as the PSP draws it (480×272, software) and as the PC recompilation draws it (4× internal resolution, Vulkan). Drag the handle.</p>
+    <div class="compare" id="slider" style="--x:50%">
+      <img class="psp" src="media/slider_psp.png" alt="PSP: 480×272 native" width="1600" height="907">
+      <img class="over" src="media/slider_pc.png" alt="PC recompilation: 4× internal resolution" width="1600" height="907">
+      <div class="handle"></div>
+      <span class="tag l">PSP · 480×272</span><span class="tag r">PC · v1.02</span>
+      <input type="range" min="0" max="100" value="50" step="0.1" aria-label="Move the comparison handle">
+    </div>
+    <div class="gallery">
+      <img src="media/comparison_zoom.png" alt="PSP vs PC: zoomed patch" loading="lazy">
+      <img src="media/comparison_presentation.png" alt="PSP vs PC as presented, with the graphics pass" loading="lazy">
+      <img src="media/comparison_menu.png" alt="PSP vs PC: main menu" loading="lazy">
+    </div>
+  </section>
+
+  <section id="install">
+    <img class="banner" src="media/section_install.png" alt="Install" width="1600" height="150">
+    <div class="panel install">
+      <ol>
+        <li><b>Download</b> the <code>.zip</code> from the <a href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest">latest release</a> (no account needed) and extract it to its own folder. Do not run it from inside the zip.</li>
+        <li><b>Add your game files.</b> Put your decrypted <code>EBOOT.BIN</code> of UCJS-10110 in the <code>game\</code> folder (<code>game\README.txt</code> explains how to dump it with PPSSPP). Keep your disc image (<code>.iso</code>) anywhere.</li>
+        <li><b>Play.</b> Double-click <code>BleachNative.exe</code>. The DISC SETUP screen asks for your <code>.iso</code> and checks both files; press START to launch.</li>
+      </ol>
+      <p class="note">Needs 64-bit Windows 10 or 11 and a Vulkan graphics driver. <code>QUICKSTART.txt</code> in the release covers controls, settings, online play, replays and troubleshooting. Updates install from inside the game: <i>PC Settings ▸ Check for Updates</i>.</p>
+    </div>
+  </section>
+
+  <section id="community">
+    <img class="banner" src="media/section_community.png" alt="Community" width="1600" height="150">
+    <div class="channels">
+      <a class="panel channel" href="https://youtube.com/@bleachheatthesoul7pc?si=MUqVwYzm2hlHhivd" target="_blank" rel="noopener">
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#ff0000" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8z"/><path fill="#fff" d="M9.6 15.6 15.8 12 9.6 8.4z"/></svg>
+        <span class="name">YouTube</span><span class="what">Gameplay and match footage.</span><span class="go">@bleachheatthesoul7pc ›</span></a>
+      <a class="panel channel" href="https://discord.gg/qJt89H2NCR" target="_blank" rel="noopener">
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5865f2" d="M20.3 4.4A19.8 19.8 0 0 0 15.4 3l-.6 1.3a18.4 18.4 0 0 0-5.6 0L8.6 3a19.7 19.7 0 0 0-4.9 1.4A20.3 20.3 0 0 0 .1 18a19.9 19.9 0 0 0 6 3l1.3-2a12.9 12.9 0 0 1-2-1l.5-.4a14.2 14.2 0 0 0 12.2 0l.5.4a12.9 12.9 0 0 1-2 1l1.3 2a19.8 19.8 0 0 0 6-3 20.2 20.2 0 0 0-3.6-13.6zM8 15.3c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4zm8 0c-1.2 0-2.2-1.1-2.2-2.4s1-2.4 2.2-2.4 2.2 1.1 2.2 2.4-1 2.4-2.2 2.4z"/></svg>
+        <span class="name">Discord</span><span class="what">Find players to play with, share knowledge and report bugs.</span><span class="go">Join the server ›</span></a>
+      <a class="panel channel" href="https://x.com/recompsociety?s=11" target="_blank" rel="noopener">
+        <svg class="logo" viewBox="0 0 24 24" aria-hidden="true"><path fill="#f4eedc" d="M18.2 2.3h3.4l-7.4 8.4 8.7 11.5h-6.8l-5.3-7-6.1 7H1.3l7.9-9L.9 2.3h7l4.8 6.4zm-1.2 17.9h1.9L7 4.2H5z"/></svg>
+        <span class="name">X</span><span class="what">Teasers of upcoming updates, and other PC recompilation projects and fans.</span><span class="go">@recompsociety ›</span></a>
+    </div>
+  </section>
+
+  <section id="creators">
+    <img class="banner" src="media/section_creators.png" alt="Creators" width="1600" height="150">
+    <div class="creators">
+      <img src="media/card_krischenn.png" alt="@KRISCHENN — Project Lead: static recompilation and PC port engineering; 60 FPS, lighting, netcode, online lobbies, Replay Theater and training suite, UI and release engineering" loading="lazy">
+      <img src="media/card_lainthewired.png" alt="@LAINTHEWIRED — Co-Creator, port contributor" loading="lazy">
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="rule"></div>
+  <div class="wrap">
+    <span class="credit">build v1.02 | @KRISCHENN &amp; @LAINTHEWIRED</span>
+    <span class="legal">© 2026 @KRISCHENN &amp; @LAINTHEWIRED. All Rights Reserved. See the <a href="https://github.com/krprojecthts/Bleach-HTS7-Releases/blob/main/LICENSE">LICENSE</a>.
+      BLEACH © Tite Kubo / Shueisha. BLEACH: Heat the Soul 7 © Sony Interactive Entertainment / Eighting. This is an unofficial fan project, not affiliated with or endorsed by them, and no game data is distributed.</span>
+  </div>
+</footer>
+
+<script>
+// The comparison slider.
+(function () {
+  var s = document.getElementById('slider'), r = s.querySelector('input');
+  r.addEventListener('input', function () { s.style.setProperty('--x', r.value + '%'); });
+})();
+
+// The latest release from the public repository's GitHub Releases API (the same one the game's updater asks).
+(function () {
+  var api = 'https://api.github.com/repos/krprojecthts/Bleach-HTS7-Releases/releases/latest';
+  var title = document.getElementById('rel-title'), meta = document.getElementById('rel-meta'), dl = document.getElementById('rel-download');
+  fetch(api, { headers: { 'Accept': 'application/vnd.github+json' } }).then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }).then(function (rel) {
+    title.textContent = rel.name || rel.tag_name;
+    var date = rel.published_at ? new Date(rel.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }) : '';
+    var assets = (rel.assets || []).filter(function (a) { return /\.zip$/i.test(a.name); });
+    var asset = assets[0] || (rel.assets || [])[0];
+    meta.textContent = rel.tag_name + (date ? ' · ' + date : '') + (asset ? ' · ' + asset.name + ' (' + (asset.size / 1048576).toFixed(0) + ' MB)' : '');
+    if (asset) dl.href = asset.browser_download_url;
+  }).catch(function () {
+    meta.textContent = 'See the releases page for the latest version.';
+  });
+})();
+
+// Hell Butterflies drifting up the page (the game's own butterfly sprites); none with reduced motion.
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c = document.getElementById('particles'), g = c.getContext('2d'), dpr = Math.min(2, window.devicePixelRatio || 1);
+  var srcs = ['media/ui/butterfly_0.png', 'media/ui/butterfly_1.png'], imgs = [], flies = [], last = 0;
+  function size() { c.width = innerWidth * dpr; c.height = innerHeight * dpr; c.style.width = innerWidth + 'px'; c.style.height = innerHeight + 'px'; }
+  size(); addEventListener('resize', size);
+  function spawn(y) {
+    return { x: Math.random() * innerWidth, y: y === undefined ? innerHeight + 40 : y, s: 0.18 + Math.random() * 0.25, v: 8 + Math.random() * 18,
+             p: Math.random() * 6.28, f: 1.5 + Math.random() * 2, a: 0.25 + Math.random() * 0.35, i: Math.floor(Math.random() * srcs.length) };
+  }
+  srcs.forEach(function (u) { var im = new Image(); im.src = u; imgs.push(im); });
+  for (var k = 0; k < 14; k++) flies.push(spawn(Math.random() * innerHeight));
+  function step(t) {
+    var dt = Math.min(0.05, (t - last) / 1000 || 0); last = t;
+    g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, innerWidth, innerHeight);
+    g.globalCompositeOperation = 'lighter';
+    flies.forEach(function (b, n) {
+      b.y -= b.v * dt; b.p += b.f * dt; b.x += Math.sin(b.p * 0.5) * 12 * dt;
+      if (b.y < -60) flies[n] = spawn();
+      var im = imgs[b.i]; if (!im.complete || !im.naturalWidth) return;
+      var flap = 0.55 + 0.45 * Math.abs(Math.sin(b.p * 2.2)), w = im.naturalWidth * b.s, h = im.naturalHeight * b.s;
+      g.save(); g.globalAlpha = b.a; g.translate(b.x, b.y); g.scale(flap, 1); g.drawImage(im, -w / 2, -h / 2, w, h); g.restore();
+    });
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+})();
+</script>
+</body>
+</html>

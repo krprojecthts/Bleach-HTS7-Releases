@@ -1,0 +1,79 @@
+BLEACH: Heat the Soul 7 - PC Recompilation ("the Port")
+Copyright (c) 2026 @KRISCHENN & @LAINTHEWIRED. All Rights Reserved.
+
+1. WHAT THIS LICENSE COVERS
+
+"The Work" means everything @KRISCHENN and @LAINTHEWIRED created for the Port:
+the BleachNative executable and every other program, library and tool in
+its release packages; its source code, whether published or not; its
+configuration files, translations, documentation, this repository and its
+website; and the original media made for it (banners, cards, layouts,
+captures and edits). It does not include anything listed in section 4.
+
+2. NO PERMISSION IS GRANTED
+
+The Work is proprietary. No license or right is granted to you by
+implication, estoppel or otherwise, except the limited permission in
+section 3. Without the prior written permission of BOTH @KRISCHENN and
+@LAINTHEWIRED, you may not:
+
+  a. copy, reproduce or redistribute the Work, in whole or in part, by any
+     means, including re-uploading release packages or hosting mirrors,
+     download portals or alternative repositories;
+  b. fork, clone for redistribution, modify, adapt, translate, or create
+     derivative works of the Work, including repacks, "enhanced" or
+     "fixed" builds, and bundles with other software;
+  c. reverse engineer, decompile, disassemble, or otherwise attempt to
+     derive source code, algorithms or internal structure from the Work,
+     except to the extent applicable law expressly permits this despite
+     this restriction;
+  d. port, re-implement or transfer the Work, or any part of its code,
+     tooling, netcode, systems or designs, into another game engine or
+     framework, including but not limited to Unreal Engine, Unity and
+     Godot;
+  e. sell, rent, lease, sublicense, or use the Work commercially, including
+     paid access, paywalled downloads or monetized mirrors;
+  f. remove, hide or alter any copyright notice, credit
+     ("build v1.02 | @KRISCHENN & @LAINTHEWIRED") or this license.
+
+3. LIMITED PERSONAL USE
+
+You may download an official release package from the official releases
+page (https://github.com/krprojecthts/Bleach-HTS7-Releases/releases) and run
+it on your own computer for your own personal, non-commercial use, together
+with game files you dumped yourself from a copy of the game you own. You
+may make videos, streams and screenshots of your own play. You may link to
+the official repository and releases page. This permission ends
+automatically if you break any term of this license.
+
+4. THIRD-PARTY RIGHTS (NOT CLAIMED HERE)
+
+BLEACH and its characters, names, artwork and story belong to Tite Kubo and
+Shueisha and their licensors. BLEACH: Heat the Soul 7, its program, data,
+graphics, sound and logos belong to Sony Interactive Entertainment and
+Eighting and their licensors. @KRISCHENN and @LAINTHEWIRED claim no
+ownership of any of these. Game imagery shown in this repository and on its
+website is shown only to identify and document the Port. No game disc
+image, EBOOT or other game data is distributed with the Port: players must
+supply their own.
+
+Open-source components inside the Port are NOT covered by this license.
+They stay under their own licenses: the PSPRecomp framework (MIT), FFmpeg's
+ATRAC3/ATRAC3plus decoders as packaged by PPSSPP (GNU LGPL 2.1 or later),
+the KIRK engine and savedata cipher taken from PPSSPP (GNU GPL), and the
+other components listed in THIRD_PARTY_NOTICES in the release package,
+where their license texts are included. Nothing in this license limits any
+right those licenses give you over those components.
+
+5. NO WARRANTY
+
+THE WORK IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHORS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE WORK OR ITS USE.
+
+6. CONTACT
+
+Requests for permission: the official Discord server,
+https://discord.gg/qJt89H2NCR

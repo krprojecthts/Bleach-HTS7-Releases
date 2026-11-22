@@ -1,71 +1,103 @@
-# BLEACH: Heat the Soul 7 — PC Native Recompilation (v1.0)
+<p align="center">
+  <img src="docs/media/hero_banner.png" alt="BLEACH: Heat the Soul 7 — PC Recompilation v1.02" width="100%">
+</p>
 
-[![Latest Release](https://img.shields.io/github/v/release/krprojecthts/Bleach-HTS7-Releases?include_prereleases&label=Download&color=orange&style=for-the-badge)](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest)
-[![Platform](https://img.shields.io/badge/Platform-Windows%2010%2F11%20(64--bit)-blue?style=for-the-badge)](#system-requirements)
-[![Netcode](https://img.shields.io/badge/Netcode-GGPO%204--Slot%20Rollback-brightgreen?style=for-the-badge)](#key-features)
+<p align="center">
+  <a href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest"><img alt="Download" src="https://img.shields.io/github/v/release/krprojecthts/Bleach-HTS7-Releases?include_prereleases&label=DOWNLOAD&style=for-the-badge&color=d8b866&labelColor=141c34"></a>
+  <a href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases"><img alt="Downloads" src="https://img.shields.io/github/downloads/krprojecthts/Bleach-HTS7-Releases/total?label=DOWNLOADS&style=for-the-badge&color=d8b866&labelColor=141c34"></a>
+  <img alt="Windows 10/11 x64" src="https://img.shields.io/badge/WINDOWS-10%20%2F%2011%20x64-f4eedc?style=for-the-badge&labelColor=141c34">
+  <a href="LICENSE"><img alt="License: All Rights Reserved" src="https://img.shields.io/badge/LICENSE-ALL%20RIGHTS%20RESERVED-c8163c?style=for-the-badge&labelColor=141c34"></a>
+</p>
+<p align="center">
+  <a href="https://discord.gg/qJt89H2NCR"><img alt="Discord" src="https://img.shields.io/badge/DISCORD-MATCHMAKING%20%26%20BUG%20REPORTS-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=141c34"></a>
+  <a href="https://youtube.com/@bleachheatthesoul7pc?si=MUqVwYzm2hlHhivd"><img alt="YouTube" src="https://img.shields.io/badge/YOUTUBE-GAMEPLAY-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=141c34"></a>
+  <a href="https://x.com/recompsociety?s=11"><img alt="X" src="https://img.shields.io/badge/X-%40RECOMPSOCIETY-000000?style=for-the-badge&logo=x&logoColor=white&labelColor=141c34"></a>
+</p>
 
-A native PC static recompilation of ***BLEACH: Heat the Soul 7*** (`NPJH50275`), rebuilt from the ground up with 60 FPS combat, GGPO-based rollback netcode, 4-player online Battle Royale, upgraded stage lighting, and full modding support.
+<p align="center"><b>A native Windows port of <i>BLEACH: Heat the Soul 7</i> (PSP), made by static recompilation.</b><br>
+<code>build v1.02 | @KRISCHENN &amp; @LAINTHEWIRED</code></p>
 
-> **[Download Latest Release (Beta v1.01 — Windows 64-bit)](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest)**
+<p align="center">
+  <a href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest"><b>⬇ Download the latest release</b></a> ·
+  <a href="https://krprojecthts.github.io/Bleach-HTS7-Releases/"><b>Website</b></a> ·
+  <a href="#install"><b>Install</b></a> ·
+  <a href="https://discord.gg/qJt89H2NCR"><b>Report a bug</b></a>
+</p>
 
----
+> [!IMPORTANT]
+> This repository holds **releases, documentation and issues only**. No game data is distributed. To play, you need your own copy of the Japanese disc **UCJS-10110**: its disc image (`.iso`) and the decrypted `EBOOT.BIN`.
 
-## Key Features
+<br>
 
-* **60 FPS Native Gameplay** — Locked, fluid 60 FPS gameplay doubling the original PSP framerate for responsive combos and crisp combat pacing.
-* **GGPO-Based Rollback Netcode** — Custom rollback netcode supporting **1v1**, **Tag Team**, and **4-Player Online Battle Royale**.
-* **Rebuilt Online Lobby & 4P Battle Royale** — Custom Fighter Cards, public/private rooms, live room chat, 2×2 quad ready-up cards, and per-player independent camera views in 4-player matches.
-* **Modern Training Mode Suite** — Real-time frame data readouts, AI dummy recording & playback, and instant neutral repositioning.
-* **Replay Engine & Direct MP4 Export** — Save matches, review frame-by-frame, and export clean high-definition MP4 clips straight from the game.
-* **Upgraded Lighting Engine** — Dynamic stage-matched character lighting and sharper shaders.
-* **Custom Jukebox & Soundtrack Manager** — Load custom battle themes and menu tracks directly in-game.
-* **Full Roster, Shuren & Restored Outfits** — All 80+ characters (including *Hell Verse* Shuren) unlocked across every mode, plus all alternate color palettes restored in Battle Royale.
-* **In-Game Texture Mods** — Built-in texture dumping and live reloading (`△ Texture Mods`) for custom character and stage packs.
-* **Native PC Controls** — Plug-and-play XInput controller support, keyboard bindings, custom button remapping, and macros.
+<img src="docs/media/section_features.png" alt="Features" width="100%">
 
----
+| | |
+|---|---|
+| 🎞️ **60 FPS presentation** | 60 pictures a second through Vulkan: an in-between picture is drawn between every two game frames. The game itself runs at 30, as on the PSP, so timing and combos are unchanged. |
+| 🔆 **Upgraded lighting & shaders** | Internal resolution up to 6×, texture upscaling, MSAA and anisotropic filtering. A post-processing pass adds bloom, contrast, warmth, sharpening and ambient occlusion. Battle stages get key light, sky and ground bounce, and haze, set per stage. |
+| 🌐 **Rollback netcode & rebuilt online lobby** | Quick Match, Ranked (FT2) with Soul Points and Soul Rate, public and private rooms, Live Matches spectating, Fighter Cards, and Direct Connect. Ping and rollback are shown under the fighters' names. |
+| 🎬 **Replay Theater with MP4 export** | Press SELECT on any results screen to save the battle. The REPLAYS card plays it back and exports it straight to an MP4 video. |
+| 🥋 **Training Mode suite** | Frame data (startup, active, recovery, advantage), input display, dummy recording and playback, Ghost Sparring, playback speed from 100% down to 10%, and instant position reset. |
+| 👥 **Battle Royale, restored** | Four-player Battle Royale on every versus stage, with each fighter's alternate colours. |
+| 🔄 **Automatic updates** | At start the game checks this repository's GitHub Releases in the background and sends nothing about you. A newer release shows a quiet pill on the main menu. *PC Settings ▸ Check for Updates* verifies the download (size and SHA-256), installs it and restarts. Saves, settings and replays are never touched. |
+| 🎮 **PC controls** | XInput controllers and keyboard, remappable, with PlayStation, Xbox or PC button icons. Western menu layout (cross confirms). |
+| 🎵 **Your own music** | BGM Jukebox and custom soundtrack packs. |
+| 🧩 **Texture mods** | Built-in texture dumping and HD replacement (Extra ▸ △ Texture Mods). |
 
-## Quickstart Installation & Setup
+<br>
 
-### 1. Download the PC Build
-1. Go to the **[Latest Releases Page](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest)** (no GitHub account required).
-2. Scroll down to **Assets** and download **`Bleach_Heat_the_Soul_7_Beta_Version_1.0.zip`**.
-3. Extract the entire ZIP into its own clean folder (for example, `C:\Games\Bleach_HTS7_PC\`). **Do not launch from inside the ZIP archive.**
+<img src="docs/media/section_comparison.png" alt="PSP vs PC" width="100%">
 
-### 2. Supply Your Game Files (`NPJH50275` — Japanese v1.01)
-Copyrighted PSP game assets are not distributed in this repository. You must provide your own clean, unmodified dump of ***BLEACH: Heat the Soul 7* (`NPJH50275` — Japan v1.01)**, including the **decrypted `EBOOT.BIN`** and `.iso`:
+The same scripted battle rendered twice by the port, frame for frame: on the left as the PSP draws it (480×272, software), on the right as the PC recompilation does.
 
-**How to dump your decrypted `EBOOT.BIN` using PPSSPP:**
-1. Open **PPSSPP** and go to **Settings → Tools → Developer tools**.
-2. Check **"Dump decrypted EBOOT.BIN on game boot"**.
-3. Boot your clean *Bleach: Heat the Soul 7* (`NPJH50275`) `.iso` for a few seconds, then close PPSSPP.
-4. Open PPSSPP's `memstick\PSP\SYSTEM\DUMP\` folder, copy **`NPJH50275.BIN`**, and rename it to **`EBOOT.BIN`**.
-*(Use a clean Japanese `NPJH50275` dump—do not use an `EBOOT.BIN` from a pre-patched English translation ISO, as modified executable offsets will not match.)*
+<p align="center"><img src="docs/media/comparison_battle.png" alt="PSP vs PC: battle" width="100%"></p>
+<p align="center"><img src="docs/media/comparison_zoom.png" alt="PSP vs PC: zoomed patch" width="100%"></p>
+<p align="center"><img src="docs/media/comparison_presentation.png" alt="PSP vs PC as presented, with the graphics pass" width="100%"></p>
+<p align="center"><img src="docs/media/comparison_menu.png" alt="PSP vs PC: main menu" width="100%"></p>
 
-**File Placement:**
-* Place your clean **`.iso`** and decrypted **`EBOOT.BIN`** into your extracted `Bleach_HTS7_PC` folder alongside `BleachNative.exe`.
+<br>
 
-### 3. Launch & Play
-1. Run **`BleachNative.exe`** (if Windows SmartScreen prompts you, click **More info → Run anyway**).
-2. Press **`Alt + Enter`** or **`F11`** anytime to toggle Borderless Fullscreen.
-3. Open **Online** to create your Fighter Card and join or host **1v1**, **Tag Team**, or **4P Battle Royale** rooms.
+<a name="install"></a>
+<img src="docs/media/section_install.png" alt="Install" width="100%">
 
----
+**Needs:** 64-bit Windows 10 or 11 and a graphics driver with Vulkan (any recent NVIDIA, AMD or Intel driver). The Visual C++ runtime is included.
 
-## System Requirements
+1. **Download** the `.zip` from the [latest release](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest) (no GitHub account needed) and extract it to its own folder, for example `C:\Games\BLEACH HTS7 PC\`. Do not run it from inside the zip.
+2. **Add your game files.** Put your **decrypted `EBOOT.BIN`** of UCJS-10110 in the `game\` folder. `game\README.txt` explains how to get it with PPSSPP (*Settings ▸ Tools ▸ Developer tools ▸ Dump decrypted EBOOT.BIN on game boot*). Keep your **disc image (`.iso`)** anywhere.
+3. **Play.** Double-click `BleachNative.exe`. On the first start the **DISC SETUP** screen asks for your `.iso` and checks both files: *READY (UCJS-10110 v1.01)* is best, and the v1.00 disc works too. Press START to launch.
 
-* **OS:** Windows 10 / Windows 11 (64-bit)
-* **GPU:** Vulkan-compatible graphics card (NVIDIA GTX 900+ / AMD RX 400+ / modern Intel integrated)
-* **Controller:** Xbox / PlayStation / XInput controller or Keyboard
+`QUICKSTART.txt` in the release covers controls, settings, online play, replays, training tools and troubleshooting. Updating is automatic (see above), or extract a newer release over the old folder. Your saves stay in `memstick\`.
 
----
+<br>
 
-## Beta v1.0 Verification & Known Notes
+<img src="docs/media/section_community.png" alt="Community" width="100%">
 
-* **SHA-256 (`Bleach_Heat_the_Soul_7_Beta_Version_1.0.zip`):** `EFC70CBCA98588C620A4B6EFD11E34988B1E36F96A2AB0EF9D8C4E9FB8D6A7A1`
-* **4P Battle Royale HUD:** Remote human players currently display the original PSP `"CPU"` label next to their top health bar—refer to the custom online nameplates underneath for real player names.
+| | Where | For |
+|---|---|---|
+| ▶️ | **[YouTube — @bleachheatthesoul7pc](https://youtube.com/@bleachheatthesoul7pc?si=MUqVwYzm2hlHhivd)** | Gameplay and match footage |
+| 💬 | **[Discord](https://discord.gg/qJt89H2NCR)** | Finding players, sharing knowledge, **reporting bugs** |
+| 𝕏 | **[X — @recompsociety](https://x.com/recompsociety?s=11)** | Upcoming-update teasers, and other PC recompilation projects and fans |
 
----
+Found a bug? Report it on Discord, or open an [issue](https://github.com/krprojecthts/Bleach-HTS7-Releases/issues). Include `BleachNative.log` from beside the exe.
 
-## Disclaimer
-This project is a fan-made native PC recompilation built on `psp-recomp` and contains **no copyrighted Sony or Bandai Namco game assets, ROMs, ISOs, or decrypted binaries**. Users must supply their own legally obtained copy of *BLEACH: Heat the Soul 7* (`NPJH50275`).
+<br>
+
+<img src="docs/media/section_creators.png" alt="Creators" width="100%">
+
+<p align="center">
+  <img src="docs/media/card_krischenn.png" alt="@KRISCHENN — Project Lead" width="49%">
+  <img src="docs/media/card_lainthewired.png" alt="@LAINTHEWIRED — Co-Creator" width="49%">
+</p>
+
+- **@KRISCHENN** (Project Lead): static recompilation and PC port engineering; 60 FPS, lighting, rollback netcode and online lobbies; Replay Theater and the training suite; UI and release engineering.
+- **@LAINTHEWIRED** (Co-Creator): port contributor.
+
+<br>
+
+## License
+
+**Copyright © 2026 @KRISCHENN & @LAINTHEWIRED. All Rights Reserved.** See [`LICENSE`](LICENSE).
+
+You may not copy, fork, modify, redistribute, mirror, reverse-engineer, or port this work into another engine (Unreal Engine, Unity, Godot or any other) without written permission from both authors.
+
+Open-source components inside the port keep their own licenses (see `LICENSE`, section 4). *BLEACH* and its characters belong to Tite Kubo / Shueisha. *BLEACH: Heat the Soul 7* belongs to Sony Interactive Entertainment and Eighting. This is an unofficial fan project, not affiliated with or endorsed by them. Game imagery is shown only to identify and document the port.
