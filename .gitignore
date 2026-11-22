@@ -1,0 +1,69 @@
+# This repository is releases, documentation and issues only. Source code, build files and
+# internal configs live in the private repository and must never be added here.
+
+# Source
+*.c
+*.cc
+*.cpp
+*.cxx
+*.h
+*.hh
+*.hpp
+*.hxx
+*.inl
+*.asm
+*.s
+
+# Build systems and IDE projects
+CMakeLists.txt
+*.cmake
+CMakeCache.txt
+CMakeFiles/
+*.sln
+*.vcxproj*
+*.filters
+.vs/
+build/
+out/
+dist/
+
+# Build outputs and symbols
+*.pdb
+*.ilk
+*.obj
+*.o
+*.lib
+*.a
+*.exp
+*.exe
+*.dll
+
+# The recompiler and the port's internals
+psprecomp/
+profiles/
+host/
+third_party/
+generated/
+tools/
+notes/
+
+# Game data and player files (never in this repository; releases carry what they carry)
+*.iso
+*.cso
+*.PBP
+EBOOT.BIN
+*.EDAT
+*.SFO
+memstick/
+replays/
+*.htsr
+
+# Internal configs and working files
+*.cfg
+*.ini
+CLAUDE.md
+TASK_STATE.md
+*.log
+*.bak
+*.tmp
+.env

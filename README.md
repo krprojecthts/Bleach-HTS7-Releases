@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/media/hero_banner.png" alt="BLEACH: Heat the Soul 7 — PC Recompilation v1.02" width="100%">
+  <img src="docs/media/hero_banner.png" alt="BLEACH: Heat the Soul 7 PC Project" width="100%">
 </p>
 
 <p align="center">
@@ -14,8 +14,10 @@
   <a href="https://x.com/recompsociety?s=11"><img alt="X" src="https://img.shields.io/badge/X-%40RECOMPSOCIETY-000000?style=for-the-badge&logo=x&logoColor=white&labelColor=141c34"></a>
 </p>
 
+<h1 align="center">BLEACH: Heat the Soul 7 PC Project</h1>
+
 <p align="center"><b>A native Windows port of <i>BLEACH: Heat the Soul 7</i> (PSP), made by static recompilation.</b><br>
-<code>build v1.02 | @KRISCHENN &amp; @LAINTHEWIRED</code></p>
+by <b>@KRISCHENN</b> &amp; <b>@LAINTHEWIRED</b></p>
 
 <p align="center">
   <a href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest"><b>⬇ Download the latest release</b></a> ·
@@ -25,7 +27,7 @@
 </p>
 
 > [!IMPORTANT]
-> This repository holds **releases, documentation and issues only**. No game data is distributed. To play, you need your own copy of the Japanese disc **UCJS-10110**: its disc image (`.iso`) and the decrypted `EBOOT.BIN`.
+> This repository holds **releases, documentation and issues only**. No source code is published here, and no disc image or `EBOOT.BIN` is distributed. To play, you need your own copy of the Japanese disc **UCJS-10110**: its disc image (`.iso`) and the decrypted `EBOOT.BIN`. Release packages include the game's Hell Verse additional data files (`.EDAT`, for Shuren), which remain the property of their owners.
 
 <br>
 
@@ -64,7 +66,7 @@ The same scripted battle rendered twice by the port, frame for frame: on the lef
 
 1. **Download** the `.zip` from the [latest release](https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest) (no GitHub account needed) and extract it to its own folder, for example `C:\Games\BLEACH HTS7 PC\`. Do not run it from inside the zip.
 2. **Add your game files.** Put your **decrypted `EBOOT.BIN`** of UCJS-10110 in the `game\` folder. `game\README.txt` explains how to get it with PPSSPP (*Settings ▸ Tools ▸ Developer tools ▸ Dump decrypted EBOOT.BIN on game boot*). Keep your **disc image (`.iso`)** anywhere.
-3. **Play.** Double-click `BleachNative.exe`. On the first start the **DISC SETUP** screen asks for your `.iso` and checks both files: *READY (UCJS-10110 v1.01)* is best, and the v1.00 disc works too. Press START to launch.
+3. **Play.** Double-click `BleachNative.exe`. On the first start the **DISC SETUP** screen asks for your `.iso` and checks both files: a disc image with the game's 1.01 update is best, and the original disc works too. Press START to launch.
 
 `QUICKSTART.txt` in the release covers controls, settings, online play, replays, training tools and troubleshooting. Updating is automatic (see above), or extract a newer release over the old folder. Your saves stay in `memstick\`.
 

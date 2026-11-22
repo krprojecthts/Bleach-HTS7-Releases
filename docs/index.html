@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>BLEACH HTS7 PC</title>
-<meta name="description" content="BLEACH: Heat the Soul 7 — a native Windows port of the PSP game, made by static recompilation. build v1.02 | @KRISCHENN & @LAINTHEWIRED">
-<meta property="og:title" content="BLEACH: Heat the Soul 7 — PC Recompilation v1.02">
-<meta property="og:description" content="60 FPS, rollback netcode, rebuilt online lobbies, Replay Theater with MP4 export, training suite. build v1.02 | @KRISCHENN & @LAINTHEWIRED">
+<title>BLEACH: Heat the Soul 7 PC Project</title>
+<meta name="description" content="BLEACH: Heat the Soul 7 PC Project — a native Windows port of the PSP game, made by static recompilation, by @KRISCHENN &amp; @LAINTHEWIRED.">
+<meta property="og:title" content="BLEACH: Heat the Soul 7 PC Project">
+<meta property="og:description" content="A native Windows port of the PSP game: 60 FPS, rollback netcode, rebuilt online lobbies, Replay Theater with MP4 export, training suite. By @KRISCHENN &amp; @LAINTHEWIRED.">
 <meta property="og:image" content="media/hero_banner.png">
 <link rel="icon" href="media/ui/butterfly_0.png">
 <style>
@@ -46,13 +46,15 @@ header.top {
   border-bottom: 3px solid var(--gold); box-shadow: 0 1px 0 var(--bronze);
 }
 header.top .wrap { display: flex; align-items: center; gap: 18px; min-height: 52px; flex-wrap: wrap; }
-header.top .brand { font: 700 17px/1 Georgia, "Times New Roman", serif; letter-spacing: 2px; color: var(--ivory); white-space: nowrap; }
+header.top .brand { font: 700 17px/1 Georgia, "Times New Roman", serif; letter-spacing: 2px; color: var(--ivory); }
 header.top nav { display: flex; gap: 16px; flex-wrap: wrap; margin-left: auto; font-size: 14px; }
 header.top nav a { color: var(--ivory); opacity: .85; }
 header.top nav a:hover { color: var(--gold-light); opacity: 1; text-decoration: none; }
 
 .hero { margin: 22px auto 0; position: relative; }
 .hero img { width: 100%; border: 1px solid var(--bronze); box-shadow: 0 12px 40px rgba(0,0,0,.6); }
+h1.title { margin: 22px 0 4px; text-align: center; font: 700 clamp(24px, 4vw, 40px)/1.2 Georgia, "Times New Roman", serif; letter-spacing: 1px; color: var(--ivory); text-shadow: 0 2px 0 #000; }
+.subtitle { margin: 0; text-align: center; color: var(--gold-light); }
 
 /* Buttons and the update pill's look: navy capsules with a gold hairline. */
 .pill, .btn {
@@ -147,8 +149,7 @@ footer .legal { color: var(--muted); font-size: 12.5px; max-width: 760px; }
 
 <header class="top">
   <div class="wrap">
-    <span class="brand">BLEACH HTS7 · PC</span>
-    <span class="pill">build <span class="v">v1.02</span></span>
+    <span class="brand">BLEACH: Heat the Soul 7 PC Project</span>
     <nav>
       <a href="#download">Download</a><a href="#features">Features</a><a href="#compare">PSP vs PC</a>
       <a href="#install">Install</a><a href="#community">Community</a><a href="#creators">Creators</a>
@@ -157,13 +158,15 @@ footer .legal { color: var(--muted); font-size: 12.5px; max-width: 760px; }
 </header>
 
 <main class="wrap">
-  <div class="hero"><img src="media/hero_banner.png" alt="BLEACH: Heat the Soul 7 — PC Recompilation v1.02" width="1600" height="600"></div>
+  <div class="hero"><img src="media/hero_banner.png" alt="BLEACH: Heat the Soul 7 PC Project" width="1600" height="600"></div>
+  <h1 class="title">BLEACH: Heat the Soul 7 PC Project</h1>
+  <p class="subtitle">A native Windows port of the PSP game, made by static recompilation — by @KRISCHENN &amp; @LAINTHEWIRED.</p>
 
   <div id="download" class="panel download">
     <div class="info">
-      <h2 id="rel-title">Latest release</h2>
+      <h2 id="rel-title">The latest build</h2>
       <p id="rel-meta" class="meta">Checking GitHub Releases…</p>
-      <p>Native Windows 10/11 x64 · Vulkan · no game data included: you need your own UCJS-10110 disc image and decrypted EBOOT.BIN.</p>
+      <p>Native Windows 10/11 x64 · Vulkan · bring your own UCJS-10110 disc image and decrypted EBOOT.BIN (neither is included). The package includes the game's Hell Verse additional data (.EDAT) for Shuren.</p>
     </div>
     <div class="actions">
       <a id="rel-download" class="btn primary" href="https://github.com/krprojecthts/Bleach-HTS7-Releases/releases/latest">⬇ Download</a>
@@ -192,7 +195,7 @@ footer .legal { color: var(--muted); font-size: 12.5px; max-width: 760px; }
       <img class="psp" src="media/slider_psp.png" alt="PSP: 480×272 native" width="1600" height="907">
       <img class="over" src="media/slider_pc.png" alt="PC recompilation: 4× internal resolution" width="1600" height="907">
       <div class="handle"></div>
-      <span class="tag l">PSP · 480×272</span><span class="tag r">PC · v1.02</span>
+      <span class="tag l">PSP · 480×272</span><span class="tag r">PC Project</span>
       <input type="range" min="0" max="100" value="50" step="0.1" aria-label="Move the comparison handle">
     </div>
     <div class="gallery">
@@ -241,9 +244,9 @@ footer .legal { color: var(--muted); font-size: 12.5px; max-width: 760px; }
 <footer>
   <div class="rule"></div>
   <div class="wrap">
-    <span class="credit">build v1.02 | @KRISCHENN &amp; @LAINTHEWIRED</span>
+    <span class="credit">BLEACH: Heat the Soul 7 PC Project · @KRISCHENN &amp; @LAINTHEWIRED</span>
     <span class="legal">© 2026 @KRISCHENN &amp; @LAINTHEWIRED. All Rights Reserved. See the <a href="https://github.com/krprojecthts/Bleach-HTS7-Releases/blob/main/LICENSE">LICENSE</a>.
-      BLEACH © Tite Kubo / Shueisha. BLEACH: Heat the Soul 7 © Sony Interactive Entertainment / Eighting. This is an unofficial fan project, not affiliated with or endorsed by them, and no game data is distributed.</span>
+      BLEACH © Tite Kubo / Shueisha. BLEACH: Heat the Soul 7 © Sony Interactive Entertainment / Eighting. This is an unofficial fan project, not affiliated with or endorsed by them. No disc image or EBOOT is distributed; the release package's Hell Verse additional data (.EDAT) remains its owners' property.</span>
   </div>
 </footer>
 

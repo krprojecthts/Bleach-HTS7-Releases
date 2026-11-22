@@ -1,4 +1,4 @@
-BLEACH: Heat the Soul 7 - PC Recompilation ("the Port")
+BLEACH: Heat the Soul 7 PC Project ("the Port")
 Copyright (c) 2026 @KRISCHENN & @LAINTHEWIRED. All Rights Reserved.
 
 1. WHAT THIS LICENSE COVERS
@@ -33,8 +33,8 @@ section 3. Without the prior written permission of BOTH @KRISCHENN and
      Godot;
   e. sell, rent, lease, sublicense, or use the Work commercially, including
      paid access, paywalled downloads or monetized mirrors;
-  f. remove, hide or alter any copyright notice, credit
-     ("build v1.02 | @KRISCHENN & @LAINTHEWIRED") or this license.
+  f. remove, hide or alter any copyright notice, the in-game credit
+     line naming @KRISCHENN & @LAINTHEWIRED, or this license.
 
 3. LIMITED PERSONAL USE
 
@@ -53,9 +53,11 @@ Shueisha and their licensors. BLEACH: Heat the Soul 7, its program, data,
 graphics, sound and logos belong to Sony Interactive Entertainment and
 Eighting and their licensors. @KRISCHENN and @LAINTHEWIRED claim no
 ownership of any of these. Game imagery shown in this repository and on its
-website is shown only to identify and document the Port. No game disc
-image, EBOOT or other game data is distributed with the Port: players must
-supply their own.
+website is shown only to identify and document the Port. No disc image or
+EBOOT is distributed with the Port: players must supply their own. Release
+packages include the game's Hell Verse additional data files (.EDAT); those
+files remain the property of their owners and are not part of the Work and
+not covered by this license.
 
 Open-source components inside the Port are NOT covered by this license.
 They stay under their own licenses: the PSPRecomp framework (MIT), FFmpeg's
